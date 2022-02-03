@@ -1,10 +1,8 @@
-import './App.css';
+import { getData } from "./services/getData";
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+  getData('Buenos Aires');
+  return <div className="App"></div>;
 }
 
 export default App;
