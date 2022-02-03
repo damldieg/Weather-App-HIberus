@@ -9,10 +9,10 @@ export const useStore = () => React.useContext(Store);
 
 //Crea y exporta el provider
 export const StoreProvider = ({ children, initialState, reducer }) => {
-    // Crea un estado global usando el reducer y el initialState
-    const [globalState, dispatch] = React.useReducer(reducer, initialState);
-  
-    return (
-      <Store.Provider value={[globalState, dispatch]}>{children}</Store.Provider>
-    );
-  };
+  // Crea un estado global usando el reducer y el initialState
+  const [globalState, dispatch] = React.useReducer(reducer, initialState);
+
+  return (
+    <Store.Provider value={[globalState, dispatch]}>{children}</Store.Provider>
+  );
+};

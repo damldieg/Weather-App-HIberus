@@ -11,8 +11,8 @@ const getCoordinates = async (city) => {
     country: response.data.sys.country,
     lat: response.data.coord.lat,
     lon: response.data.coord.lon,
-  }
-  return response
+  };
+  return response;
 };
 
 export const getData = async (city) => {
@@ -30,7 +30,7 @@ export const getData = async (city) => {
       temp: response.data.current.temp,
       feels_like: response.data.current.feels_like,
       weather_description: response.data.current.weather[0].description,
-      weather_icon: response.data.current.weather[0].icon
+      weather_icon: response.data.current.weather[0].icon,
     },
     daily: response.data.daily.map((day) => {
       return {
@@ -38,10 +38,10 @@ export const getData = async (city) => {
         min_temp: day.temp.min,
         max_temp: day.temp.max,
         weather_description: day.weather[0].description,
-        weather_icon: day.weather[0].icon
-      }
-    })
-  }
+        weather_icon: day.weather[0].icon,
+      };
+    }),
+  };
 
-  return response
+  return response;
 };

@@ -11,8 +11,6 @@ export const searchCity = (city) => ({
   city,
 });
 
-
-
 //Crea el reducer
 export const reducer = (state = initialState, action) => {
   if (action.type === SEARCH_CITY) {
@@ -22,4 +20,3 @@ export const reducer = (state = initialState, action) => {
     };
   }
 };
-
