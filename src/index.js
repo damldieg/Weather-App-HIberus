@@ -2,11 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
+import { StoreProvider } from "./store/store";
+import { initialState, reducer } from "./store/reducer";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider initialState={initialState} reducer={reducer}>
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,8 +1,13 @@
-import { getData } from "./services/getData";
+import { Container, Heading } from "@chakra-ui/react";
+import Searchbar from "./components/Searchbar";
 
 function App() {
-  getData('Buenos Aires');
-  return <div className="App"></div>;
+  return (
+    <Container>
+      <Heading padding="4">HIBERUS WEATHER APP</Heading>
+      <Searchbar />
+    </Container>
+  );
 }
 
 export default App;
