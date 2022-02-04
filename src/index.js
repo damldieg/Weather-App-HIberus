@@ -5,11 +5,13 @@ import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider } from "./store/store";
-import { initialState, reducer } from "./store/reducer";
+import { initialState } from "./store/store";
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <StoreProvider initialState={initialState} reducer={reducer}>
+    <StoreProvider initialState={initialState}>
       <ChakraProvider>
         <App />
       </ChakraProvider>

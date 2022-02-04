@@ -43,5 +43,7 @@ export const getData = async (city) => {
     }),
   };
 
+  response.daily.shift();
+
   return response;
 };
