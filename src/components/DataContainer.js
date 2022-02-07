@@ -1,11 +1,10 @@
-import { Box, Divider, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Divider, SimpleGrid, GridItem } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
 import { useStore } from "../store/store";
 import Card from "./Card";
 import MainCard from "./MainCard";
 import Searchbar from "./Searchbar";
-
 
 const StyledBox = styled(Box)`
   width: 90%;
@@ -15,13 +14,12 @@ const StyledBox = styled(Box)`
   border-radius: 10px;
   border: 2px solid white;
   padding: 2em;
-`
+`;
 
-const StyledGrid = styled(Grid)`
+const StyledGrid = styled(SimpleGrid)`
   align-items: center;
   margin-top: 3em;
-
-`
+`;
 
 function DataContainer() {
   const { globalState } = useStore();
@@ -29,7 +27,7 @@ function DataContainer() {
 
   return (
     <StyledBox>
-    <Searchbar />
+      <Searchbar />
       {data.name && (
         <>
           <MainCard
@@ -41,10 +39,9 @@ function DataContainer() {
             weather={data?.current.weather_description}
             icon={data?.current.weather_icon}
           />
-          <Divider orientation='horizontal' />
-          <StyledGrid templateColumns='repeat(7, 1fr)' gap={4}>
+          <Divider orientation="horizontal" />
+          <StyledGrid columns={[1,7]} templateColumns="repeat(7, 1fr)" gap={4}>
             {data.daily.map((day, index) => {
-
               return (
                 <GridItem key={index}>
                   <Card

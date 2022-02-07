@@ -27,16 +27,16 @@ export const getData = async (city) => {
     country,
     current: {
       date: response.data.current.dt,
-      temp: response.data.current.temp,
-      feels_like: response.data.current.feels_like,
+      temp: Math.round(response.data.current.temp * 10) / 10,
+      feels_like: Math.round(response.data.current.feels_like * 10) / 10,
       weather_description: response.data.current.weather[0].description,
       weather_icon: response.data.current.weather[0].icon,
     },
     daily: response.data.daily.map((day) => {
       return {
         date: day.dt,
-        min_temp: day.temp.min,
-        max_temp: day.temp.max,
+        min_temp: Math.round(day.temp.min * 10) / 10,
+        max_temp: Math.round(day.temp.max * 10) / 10,
         weather_description: day.weather[0].description,
         weather_icon: day.weather[0].icon,
       };
